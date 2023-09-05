@@ -2,6 +2,8 @@ This is an improved copy of [react-pdf-highlighter](https://www.npmjs.com/packag
 
 This version fixed so it includes the ability to zoom.
 
+[thom-react-pdf-highlighter](https://github.com/Thom719c/thom-react-pdf-highlighter)
+
 # Some of the documentation/readme from react-pdf-highlighter below
 
 ## react-pdf-highlighter
@@ -61,8 +63,3 @@ Yes, but people from https://www.pdfannotator.com/ asked me to rename, since [th
 ##### I'm trying the demo with my PDF and it is not loading!
 
 Please check the [CORS headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) on your url. It is required for the cross-domain request.
-
-### Compatibility
-
-Works in Google Chrome, Safari 10+, Firefox 52+. Not tested in Internet
-Explorer.

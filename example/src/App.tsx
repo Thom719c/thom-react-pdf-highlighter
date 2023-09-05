@@ -22,6 +22,7 @@ const testHighlights: Record<string, Array<IHighlight>> = _testHighlights;
 interface State {
   url: string;
   highlights: Array<IHighlight>;
+  zoom: number;
 }
 
 const getNextId = () => String(Math.random()).slice(2);
@@ -57,7 +58,7 @@ class App extends Component<{}, State> {
     highlights: testHighlights[initialUrl]
       ? [...testHighlights[initialUrl]]
       : [],
-      zoom: 1,
+    zoom: 1,
   };
 
   resetHighlights = () => {
@@ -132,11 +133,12 @@ class App extends Component<{}, State> {
       }),
     });
   }
-  
+
   handleZoomChange = (event: any) => {
     const newZoom = parseFloat(event.target.value);
     this.setState({ zoom: newZoom });
   };
+
   render() {
     const { url, highlights, zoom } = this.state;
 

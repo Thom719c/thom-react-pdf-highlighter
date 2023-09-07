@@ -4,7 +4,7 @@ This version includes the ability to zoom/scale and customize the content in the
 
 [thom-react-pdf-highlighter](https://github.com/Thom719c/thom-react-pdf-highlighter)
 
-## Getting Started
+## Getting Started in your own project
 
 1. Install the package using npm:
 

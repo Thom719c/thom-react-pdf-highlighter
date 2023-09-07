@@ -1,4 +1,4 @@
-This is an improved copy of [react-pdf-highlighter](https://www.npmjs.com/package/react-pdf-highlighter) version 6.1.0.
+This is a little improved copy of [react-pdf-highlighter](https://www.npmjs.com/package/react-pdf-highlighter) version 6.1.0.
 
 This version fixed so it includes the ability to zoom.
 

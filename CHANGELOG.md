@@ -1,20 +1,8 @@
-# 6.0.0
+# 1.0.3
 
-* Support for React 18 (https://github.com/agentcooper/react-pdf-highlighter/pull/232)
-* Fix for `usePdfCoordinates` (https://github.com/agentcooper/react-pdf-highlighter/pull/244)
+* Updated the "Tip" component to allow customization of the emoji list. You can now set your own list of emojis, but I've retained a default set for convenience. Additionally, I've introduced a select/option feature alongside the existing radio buttons.
 
-# 5.3.0
 
-* [Added support of multi-page highlights](https://github.com/agentcooper/react-pdf-highlighter/pull/167), thanks to @jonathanbyrne!
+# 1.0.2
 
-# 3.0.0
-
-* Update PDF.js dependency to 2.2.228.
-
-# 2.1.1
-
-* Enabled hyperlinks inside the PDF document (thanks @steevn).
-
-# 2.0.0
-
-* Renamed `PdfAnnotator` to `PdfHighlighter` all over the code for naming consistency.
+* Made so the zoom/scale work

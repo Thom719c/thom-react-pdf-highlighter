@@ -37,11 +37,11 @@ const resetHash = () => {
 const HighlightPopup = ({
   comment,
 }: {
-  comment: { text: string; emoji: string };
+  comment: { text: string; selectedValueForRadio?: string; selectedValueForSelect?: string };
 }) =>
   comment.text ? (
     <div className="Highlight__popup">
-      {comment.emoji} {comment.text}
+      {comment.selectedValueForRadio} {comment.selectedValueForSelect} {comment.text}
     </div>
   ) : null;
 
@@ -141,6 +141,7 @@ class App extends Component<{}, State> {
 
   render() {
     const { url, highlights, zoom } = this.state;
+    const options = ["Name", "CPR", "Date", "Address", "Phone Number", "Email", "Account Number", "Reference Number", "Invoice ID", "Transaction Code"];
 
     return (
       <div className="App" style={{ display: "flex", height: "100vh" }}>
@@ -185,9 +186,14 @@ class App extends Component<{}, State> {
                     onOpen={transformSelection}
                     onConfirm={(comment) => {
                       this.addHighlight({ content, position, comment });
-
                       hideTipAndSelection();
                     }}
+                    // For both radioOptions and valueOptions:
+                    // 1. If nothing is provided, they are empty.
+                    // 2. Use valueOptions={[]} to show the default options.
+                    // 3. To display your custom list, set valueOptions={Your list here} ex. valueOptions={options}.
+                    radioOptions={[]}
+                    valueOptions={options}
                   />
                 )}
                 highlightTransform={(

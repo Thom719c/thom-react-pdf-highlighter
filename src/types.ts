@@ -46,7 +46,8 @@ export interface HighlightContent {
 
 export interface Comment {
   text: string;
-  emoji: string;
+  selectedValueForRadio?: string;
+  selectedValueForSelect?: string;
 }
 
 export interface HighlightComment {

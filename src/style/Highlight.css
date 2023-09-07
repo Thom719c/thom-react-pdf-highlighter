@@ -2,7 +2,7 @@
   position: absolute;
 }
 
-.Highlight__emoji {
+.Highlight__selectedValue {
   position: absolute;
   color: black;
   opacity: 1;

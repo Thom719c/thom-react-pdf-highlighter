@@ -109,6 +109,7 @@ export class Tip extends Component<Props, State> {
               <div>
                 {options === undefined ? null : (
                   <select
+                    className="Tip__select"
                     value={selectedValueForSelect}
                     onChange={(event) =>
                       this.setState({ selectedValueForSelect: event.target.value })

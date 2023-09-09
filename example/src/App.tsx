@@ -7,6 +7,7 @@ import {
   Highlight,
   Popup,
   AreaHighlight,
+  HighlightPopup,
 } from "./react-pdf-highlighter";
 
 import type { IHighlight, NewHighlight } from "./react-pdf-highlighter";
@@ -33,17 +34,6 @@ const parseIdFromHash = () =>
 const resetHash = () => {
   document.location.hash = "";
 };
-
-const HighlightPopup = ({
-  comment,
-}: {
-  comment: { text: string; selectedValueForRadio?: string; selectedValueForSelect?: string };
-}) =>
-  comment.text ? (
-    <div className="Highlight__popup">
-      {comment.selectedValueForRadio} {comment.selectedValueForSelect} {comment.text}
-    </div>
-  ) : null;
 
 const PRIMARY_PDF_URL = "https://arxiv.org/pdf/1708.08021.pdf";
 const SECONDARY_PDF_URL = "https://arxiv.org/pdf/1604.02480.pdf";
@@ -133,6 +123,15 @@ class App extends Component<{}, State> {
       }),
     });
   }
+
+  handleDeleteHighlight = (highlightId: string) => {
+    // Use the `setState` function to update the state based on the previous state.
+    this.setState((prevState) => ({
+      // Update the `highlights` array by filtering out the highlight with the specified ID.
+      // Only highlights with IDs different from `highlightId` will be included in the new array.
+      highlights: prevState.highlights.filter((highlight) => highlight.id !== highlightId),
+    }));
+  };
 
   handleZoomChange = (event: any) => {
     const newZoom = parseFloat(event.target.value);
@@ -231,7 +230,8 @@ class App extends Component<{}, State> {
 
                   return (
                     <Popup
-                      popupContent={<HighlightPopup {...highlight} />}
+                      // popupContent={<HighlightPopup highlight={highlight} />}
+                      popupContent={<HighlightPopup highlight={highlight} onDelete={() => this.handleDeleteHighlight(highlight.id)} />}
                       onMouseOver={(popupContent) =>
                         setTip(highlight, (highlight) => popupContent)
                       }

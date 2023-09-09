@@ -20,6 +20,7 @@ import {
     Tip,
     Highlight,
     Popup,
+    HighlightPopup,
     AreaHighlight,
 } from 'thom-react-pdf-highlighter';
 ```

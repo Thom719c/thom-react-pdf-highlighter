@@ -212,7 +212,6 @@ class App extends Component<{}, State> {
                     <Highlight
                       isScrolledTo={isScrolledTo}
                       position={highlight.position}
-                      comment={highlight.comment}
                     />
                   ) : (
                     <AreaHighlight

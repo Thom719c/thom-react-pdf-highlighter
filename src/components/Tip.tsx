@@ -128,7 +128,7 @@ export class Tip extends Component<Props, State> {
               </div>
             </div>
             <div>
-              <input type="submit" value="Save" />
+              <input type="submit" value="Save" className="Tip__save"/>
             </div>
           </form>
         )}

@@ -22,7 +22,7 @@
   height: 70px;
 }
 
-.Tip__card input[type="submit"] {
+.Tip__card .Tip__save {
   margin-top: 5px;
   padding: 6px 12px;
   font-size: 16px;
@@ -32,11 +32,10 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
 
-  /* Hover effect for button*/
-  &:hover {
-    background-color: #45a049;
-  }
+.Tip__save:hover {
+  background-color: #45a049;
 }
 
 .Tip__labelOptions {

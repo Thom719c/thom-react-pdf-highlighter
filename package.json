@@ -1,6 +1,6 @@
 {
   "name": "thom-react-pdf-highlighter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react-pdf-highlighter, with zoom/scale",
   "author": "Thom719c (based on work by Original Author Artem Tyurin <artem.tyurin@gmail.com>)",
   "license": "MIT",

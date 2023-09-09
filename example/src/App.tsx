@@ -190,13 +190,13 @@ class App extends Component<{}, State> {
 
                   this.scrollToHighlightFromHash();
                 }}
-                searchValue={searchValue}
-                onSearch={(currentMatch, totalMatchCount) => {
-                  this.setState({ currentMatch, totalMatchCount });
-                }}
                 findRefs={(findPrev, findNext) => {
                   this.findPrev = findPrev;
                   this.findNext = findNext;
+                }}
+                searchValue={searchValue}
+                onSearch={(currentMatch, totalMatchCount) => {
+                  this.setState({ currentMatch, totalMatchCount });
                 }}
                 onSelectionFinished={(
                   position,

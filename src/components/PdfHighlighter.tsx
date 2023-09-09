@@ -72,10 +72,10 @@ interface Props<T_HT> {
   highlights: Array<T_HT>;
   onScrollChange: () => void;
   scrollRef: (scrollTo: (highlight: T_HT) => void) => void;
-  findRefs: (findPrev: () => void, findNext: () => void) => void;
   pdfDocument: PDFDocumentProxy;
   pdfScaleValue: string;
-  searchValue: string;
+  findRefs?: (findPrev: () => void, findNext: () => void) => void;
+  searchValue?: string;
   onSearch: (currentMatch: number, totalMatchCount: number) => void;
   onSelectionFinished: (
     position: ScaledPosition,
@@ -477,7 +477,10 @@ export class PdfHighlighter<T_HT extends IHighlight> extends PureComponent<
     this.handleScaleValue();
 
     scrollRef(this.scrollTo);
-    findRefs(this.goToPreviousMatch, this.goToNextMatch);
+    // Check if findRefs is defined before calling it
+    if (findRefs) {
+      findRefs(this.goToPreviousMatch, this.goToNextMatch);
+    }
   };
 
   onSelectionChange = () => {

@@ -5,6 +5,11 @@ interface Props {
   highlights: Array<IHighlight>;
   resetHighlights: () => void;
   toggleDocument: () => void;
+  setSearchValue: (searchValue: string) => void;
+  currentMatch: number;
+  totalMatchCount: number;
+  findNext: () => void;
+  findPrev: () => void;
 }
 
 const updateHash = (highlight: IHighlight) => {
@@ -17,8 +22,13 @@ export function Sidebar({
   highlights,
   toggleDocument,
   resetHighlights,
+  setSearchValue,
+  currentMatch,
+  totalMatchCount,
+  findNext,
+  findPrev,
 }: Props) {
-  
+
   return (
     <div className="sidebar" style={{ width: "25vw" }}>
       <div className="description" style={{ padding: "1rem" }}>
@@ -38,7 +48,17 @@ export function Sidebar({
             drag.
           </small>
         </p>
+
+        <h3 style={{ marginBottom: "1rem" }}>Search:</h3>
+        <input type="text" onChange={(e) => setSearchValue(e.target.value)} />
+        <div>
+          <button onClick={findPrev}>{"<"}</button>
+          <button>{`${currentMatch}/${totalMatchCount}`}</button>
+          <button onClick={findNext}>{">"}</button>
+        </div>
       </div>
+      
+      <hr />
 
       <ul className="sidebar__highlights">
         {highlights.map((highlight, index) => (

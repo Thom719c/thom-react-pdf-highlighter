@@ -24,6 +24,9 @@ interface State {
   url: string;
   highlights: Array<IHighlight>;
   zoom: number;
+  searchValue: string;
+  currentMatch: number;
+  totalMatchCount: number;
 }
 
 const getNextId = () => String(Math.random()).slice(2);
@@ -46,9 +49,12 @@ class App extends Component<{}, State> {
   state = {
     url: initialUrl,
     highlights: testHighlights[initialUrl]
-      ? [...testHighlights[initialUrl]]
-      : [],
+    ? [...testHighlights[initialUrl]]
+    : [],
     zoom: 1,
+    searchValue: "",
+    currentMatch: 0,
+    totalMatchCount: 0,
   };
 
   resetHighlights = () => {
@@ -66,6 +72,10 @@ class App extends Component<{}, State> {
       highlights: testHighlights[newUrl] ? [...testHighlights[newUrl]] : [],
     });
   };
+
+  findNext = () => {};
+
+  findPrev = () => {};
 
   scrollViewerTo = (highlight: any) => { };
 
@@ -139,7 +149,7 @@ class App extends Component<{}, State> {
   };
 
   render() {
-    const { url, highlights, zoom } = this.state;
+    const { url, highlights, zoom, searchValue, currentMatch, totalMatchCount } = this.state;
     const options = ["Name", "CPR", "Date", "Address", "Phone Number", "Email", "Account Number", "Reference Number", "Invoice ID", "Transaction Code"];
 
     return (
@@ -148,6 +158,11 @@ class App extends Component<{}, State> {
           highlights={highlights}
           resetHighlights={this.resetHighlights}
           toggleDocument={this.toggleDocument}
+          setSearchValue={(searchValue) => this.setState({ searchValue })}
+          currentMatch={currentMatch}
+          totalMatchCount={totalMatchCount}
+          findNext={this.findNext}
+          findPrev={this.findPrev}
         />
         <div
           style={{
@@ -174,6 +189,14 @@ class App extends Component<{}, State> {
                   this.scrollViewerTo = scrollTo;
 
                   this.scrollToHighlightFromHash();
+                }}
+                searchValue={searchValue}
+                onSearch={(currentMatch, totalMatchCount) => {
+                  this.setState({ currentMatch, totalMatchCount });
+                }}
+                findRefs={(findPrev, findNext) => {
+                  this.findPrev = findPrev;
+                  this.findNext = findNext;
                 }}
                 onSelectionFinished={(
                   position,

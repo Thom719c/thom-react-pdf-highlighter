@@ -4,6 +4,8 @@
 
 * Modified the `Highlight` component to remove the display of emojis/values for radio buttons. The component now provides a cleaner representation of highlights.
 
+* Added ability to search
+
 
 # 1.0.3
 

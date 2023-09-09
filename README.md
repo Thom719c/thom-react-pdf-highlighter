@@ -1,6 +1,6 @@
 This is a little improved copy of [react-pdf-highlighter](https://www.npmjs.com/package/react-pdf-highlighter) version 6.1.0.
 
-This version includes the ability to zoom/scale and customize the content in the tip with your own list, allowing you to replace the default emojis. However, you can still choose to use the default emojis if you prefer.
+This version includes the ability to zoom/scale, search and customize the content in the tip with your own list, allowing you to replace the default emojis. However, you can still choose to use the default emojis if you prefer.
 
 [thom-react-pdf-highlighter](https://github.com/Thom719c/thom-react-pdf-highlighter)
 

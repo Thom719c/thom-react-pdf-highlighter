@@ -1,0 +1,149 @@
+.sidebar {
+    width: 25vw;
+}
+
+.description {
+    padding: 1rem;
+}
+
+.optionGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.item {
+    margin: 5px;
+}
+
+.highlightMode {
+    cursor: pointer;
+    background-color: #242424;
+    color: #fff;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    /* width: 24px; */
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.highlightMode:hover {
+    background-color: #acacac;
+    color: white;
+}
+
+.highlightModeActive {
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    /* width: 24px; */
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.highlightModeActive:hover {
+    background-color: #018605;
+}
+
+.zoom {
+    cursor: pointer;
+    background-color: #242424;
+    color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 65px;
+    height: 42px;
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+    margin-left: 10px;
+}
+
+button {
+    all: unset;
+    margin-left: 8px;
+}
+
+.areaHighlightImage {
+    height: 30px;
+}
+
+.search_match_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_button_container,
+.scale_container {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.search_prev_next {
+    cursor: pointer;
+    background-color: #242424;
+    color: #fff;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+}
+
+.search_prev_next:hover {
+    background-color: #242424b0;
+}
+
+.search_match {
+    display: flex;
+    justify-content: center;
+    background-color: #242424;
+    color: #bdbdbd;
+    width: 40px;
+    height: 24px;
+    padding: 8px;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 0.7rem;
+}
+
+.highlight__image {
+    margin-top: 0.5rem;
+}
+
+.toggle-document-container,
+.reset-highlights-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.toggle-document,
+.reset-highlights {
+    background-color: #242424;
+    color: #fff;
+}

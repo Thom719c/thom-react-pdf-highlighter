@@ -1,6 +1,7 @@
 # 1.0.6 (Up comming updates).
 
-* Gonna make an example in .js so there will be one for .tsx and .js.
+* Gonna make an example in .jsx so there will be one for .tsx and .jsx.
+* 
 
 
 # 1.0.5

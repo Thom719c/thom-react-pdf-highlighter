@@ -110,3 +110,8 @@ blockquote:after {
   width: 75vw;
   position: relative;
 }
+
+.Tip__card {
+  background-color: #242424 !important;
+  color: #fff !important;
+}

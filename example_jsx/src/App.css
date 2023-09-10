@@ -113,5 +113,9 @@ blockquote:after {
 
 .Tip__card {
   background-color: #242424 !important;
-  color: #fff !important;
+  color: #fff;
+}
+
+.Tip__card textarea {
+  background-color: #3b3b3b;
 }
